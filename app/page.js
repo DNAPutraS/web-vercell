@@ -1,12 +1,17 @@
 import { supabase } from '../lib/supabase';
 
 export const dynamic = 'force-dynamic';
+export const fetchCache = 'force-no-store';
 
 export default async function Home() {
-  const { data: posts } = await supabase
+  const { data: posts, error } = await supabase
     .from('posts')
     .select('id,title,description,post_images(url,position)')
     .order('created_at', { ascending: false });
+
+  if (error) {
+    return <p className="muted">Gagal memuat data: {error.message}</p>;
+  }
 
   if (!posts || posts.length === 0) {
     return <p className="muted">Belum ada postingan.</p>;
