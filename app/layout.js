@@ -1,6 +1,6 @@
 import './globals.css';
 
-export const metadata = { title: 'Galeri', description: 'Kumpulan foto dan cerita di baliknya.' };
+export const metadata = { title: 'Jual Barang', description: 'Jual Barang Taruna STMKG' };
 
 export default function RootLayout({ children }) {
   return (
