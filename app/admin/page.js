@@ -22,7 +22,7 @@ function Login() {
   const [msg, setMsg] = useState('');
   const submit = async () => {
     const { error } = await supabase.auth.signInWithPassword({ email, password: pw });
-    if (error) setMsg('Email atau password salah.');
+    if (error) setMsg('Gagal masuk: ' + error.message);
   };
   return (
     <div className="card" style={{ maxWidth: 380 }}>
