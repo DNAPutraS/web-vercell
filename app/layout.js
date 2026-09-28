@@ -8,7 +8,7 @@ export default function RootLayout({ children }) {
       <body>
         <div className="wrap">
           <header className="top">
-            <a href="/"><h1>Galeri</h1></a>
+            <a href="/"><h1>Jual Barang</h1></a>
           </header>
           {children}
         </div>
